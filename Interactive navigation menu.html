@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #003f7f;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background-color: #0059b3;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #3399ff;
+            color: #001f4d;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 100px 20px 60px;
+        }
+
+        #home { background-color: #e6f2ff; }
+        #about { background-color: #cce0ff; }
+        #services { background-color: #b3ccff; }
+        #contact { background-color: #99b3ff; }
+
+        .content-block {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h1>Home Page</h1>
+        <div class="content-block"><p>Welcome to our website!</p></div>
+        <div class="content-block"><p>This is a demonstration of a fixed, interactive navigation menu with blue theme.</p></div>
+        <div class="content-block"><p>Scroll down to explore more content and experience the navigation bar in action.</p></div>
+        <div class="content-block"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex.</p></div>
+        <div class="content-block"><p>Maecenas sit amet tincidunt elit. Donec vehicula, nisl eget fermentum tincidunt, nulla erat egestas elit, eget.</p></div>
+        <div class="content-block"><p>Nam gravida, orci nec posuere imperdiet, sem sem pulvinar lorem, a convallis elit arcu at tortor.</p></div>
+        <div class="content-block"><p>Vivamus pharetra, massa vel luctus placerat, turpis mi facilisis massa, ut vehicula lacus nunc sed risus.</p></div>
+        <div class="content-block"><p>Keep scrolling for more visual transitions and UI interaction examples.</p></div>
+    </section>
+
+    <section id="about">
+        <h1>About Us</h1>
+        <p>We are passionate developers!</p>
+    </section>
+
+    <section id="services">
+        <h1>Services</h1>
+        <p>We offer web development and design services.</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>Reach out to us at contact@example.com</p>
+    </section>
+
+    <script>
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>
